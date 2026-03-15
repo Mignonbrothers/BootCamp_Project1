@@ -62,6 +62,7 @@ class ModernCockpit(QWidget):
 
         self.manual_runner = rc_car_manual_sim.ManualScenarioRunner(self)
 
+
     def reduce_battery(self):
         if self.is_shutting_down: return
 
@@ -380,13 +381,26 @@ class ModernCockpit(QWidget):
                 QTimer.singleShot(1500, lambda: self.update_gear_display())
             return
 
-        # --- [새로 추가할 부분: 1번 키 누르면 시나리오 시작] ---
+        # --- [1번 키: 자율 주행 시나리오 (영상 5) 시작] ---
         if event.key() == Qt.Key_1 and not event.isAutoRepeat():
             self.scenario_runner.start_scenario()
             return
 
+        # --- [2번 키: 수동 주행 시나리오 (영상 2) 시작] ---
         if event.key() == Qt.Key_2 and not event.isAutoRepeat():
             self.manual_runner.start_scenario()
+            return
+
+        # --- [C 키: 진행 중인 시뮬레이션 즉시 중단] ---
+        if event.key() == Qt.Key_C and not event.isAutoRepeat():
+            # 1번 자율 주행 중단
+            if hasattr(self, 'scenario_runner') and getattr(self, 'is_simulating', False):
+                self.scenario_runner.stop_scenario()
+
+            # 2번 수동 주행 중단
+            if hasattr(self, 'manual_runner') and getattr(self, 'is_simulating', False):
+                self.manual_runner.stop_scenario()
+
             return
 
         if self.is_shutting_down: return
