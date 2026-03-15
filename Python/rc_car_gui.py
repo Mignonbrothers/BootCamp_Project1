@@ -2,8 +2,8 @@ import sys
 import math
 import time
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame
-from PyQt5.QtCore import Qt, QTimer, QPoint
-from PyQt5.QtGui import QPainter, QColor, QFont, QPen, QBrush, QPolygon
+from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtGui import QPainter, QColor, QFont, QPen, QBrush
 import rc_car_auto_sim  # <--- 이 줄을 새로 추가하세요!
 import rc_car_manual_sim
 
