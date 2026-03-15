@@ -1,3 +1,5 @@
+# 자동 주행 1번 버튼 누르면 실행
+
 from PyQt5.QtCore import QTimer
 
 

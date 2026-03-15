@@ -1,3 +1,5 @@
+# 메인 GUI
+
 import sys
 import math
 import time
