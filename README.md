@@ -10,7 +10,7 @@
 > 초음파·조도 센서와 ESP32/Arduino 분산 제어 아키텍처를 기반으로 구현한 ADAS 데모 프로젝트
 > 2026.03 | 로봇 자율주행 기초 부트캠프 Project 1
 
-<img width="1024" height="1006" alt="image" src="https://github.com/user-attachments/assets/e91e2b86-fe29-42cb-b75d-3e3fee7a226c" />
+
 
 ---
 
